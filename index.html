@@ -8,26 +8,25 @@
 
   <meta
     name="description"
-    content="Fayaz — Data Annotation and Quality Assurance Specialist focused on computer vision annotation, LiDAR workflows, quality auditing and AI training data."
+    content="Fayaz — Data Annotation & Quality Assurance Specialist with experience in computer vision annotation, LiDAR, quality control and labeling operations."
   >
 
   <style>
     :root {
-      --bg: #030405;
-      --bg-soft: #07090c;
-      --card: #0a0d11;
-      --card-2: #0d1116;
-      --border: rgba(255,255,255,0.09);
-      --border-strong: rgba(255,255,255,0.15);
-      --text: #f4f7fb;
-      --muted: #9aa7b7;
-      --muted-2: #718096;
-      --cyan: #66d9ff;
-      --blue: #79a7ff;
-      --purple: #9c8cff;
-      --green: #64e6b1;
+      --bg: #020304;
+      --bg2: #06080b;
+      --card: #090c10;
+      --card2: #0d1116;
+      --text: #f5f7fa;
+      --muted: #9aa7b5;
+      --muted2: #6f7d8c;
+      --line: rgba(255,255,255,.09);
+      --line2: rgba(255,255,255,.15);
+      --cyan: #68d9ff;
+      --blue: #82aaff;
+      --purple: #9a8cff;
+      --green: #67e4b1;
       --max: 1180px;
-      --radius: 24px;
     }
 
     * {
@@ -42,14 +41,20 @@
 
     body {
       background:
-        radial-gradient(circle at 75% 18%, rgba(62, 117, 150, 0.10), transparent 28%),
-        radial-gradient(circle at 15% 75%, rgba(80, 62, 145, 0.08), transparent 25%),
+        radial-gradient(
+          circle at 80% 12%,
+          rgba(61, 132, 170, .10),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 15% 70%,
+          rgba(89, 66, 150, .07),
+          transparent 25%
+        ),
         var(--bg);
       color: var(--text);
       font-family:
         Inter,
-        ui-sans-serif,
-        system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
@@ -65,30 +70,30 @@
 
     img,
     video {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
       width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
+      margin: auto;
     }
 
     /* =========================
-       NAVIGATION
-    ========================== */
+       NAV
+    ========================= */
 
-    nav {
+    .nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      height: 78px;
-      background: rgba(3, 4, 5, 0.72);
+      height: 76px;
+      background: rgba(2,3,4,.78);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
     }
 
     .nav-inner {
@@ -102,14 +107,14 @@
 
     .brand {
       font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.7px;
+      font-weight: 850;
+      letter-spacing: -.7px;
     }
 
     .brand span {
       background: linear-gradient(
         90deg,
-        #ffffff,
+        #fff,
         var(--cyan),
         var(--purple)
       );
@@ -121,48 +126,47 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 28px;
     }
 
     .nav-links a {
-      color: #aeb8c6;
+      color: #aab5c2;
       font-size: 14px;
-      transition: 0.25s ease;
+      transition: .25s ease;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: #fff;
     }
 
-    .nav-contact {
-      border: 1px solid var(--border-strong);
-      padding: 11px 19px;
+    .nav-call {
+      border: 1px solid var(--line2);
       border-radius: 999px;
-      color: #eef4fa !important;
-      background: rgba(255,255,255,0.025);
+      padding: 10px 18px;
+      color: #fff !important;
+      background: rgba(255,255,255,.025);
     }
 
-    .nav-contact:hover {
-      border-color: rgba(102,217,255,0.45);
-      background: rgba(102,217,255,0.06);
+    .nav-call:hover {
+      border-color: rgba(104,217,255,.4);
+      background: rgba(104,217,255,.05);
     }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
       min-height: 100vh;
-      padding-top: 145px;
-      padding-bottom: 80px;
+      padding: 140px 0 80px;
       display: flex;
       align-items: center;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 65px;
       align-items: center;
     }
 
@@ -171,11 +175,11 @@
       align-items: center;
       gap: 10px;
       color: var(--cyan);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 28px;
+      margin-bottom: 27px;
     }
 
     .eyebrow::before {
@@ -183,196 +187,188 @@
       width: 32px;
       height: 1px;
       background: var(--cyan);
-      box-shadow: 0 0 10px rgba(102,217,255,0.7);
+      box-shadow: 0 0 12px rgba(104,217,255,.7);
     }
 
     .hero h1 {
-      font-size: clamp(72px, 9vw, 128px);
-      line-height: 0.86;
+      font-size: clamp(75px, 10vw, 132px);
+      line-height: .84;
       letter-spacing: -7px;
-      margin-bottom: 30px;
-      font-weight: 850;
+      font-weight: 900;
+      margin-bottom: 28px;
+
       background: linear-gradient(
         110deg,
-        #ffffff 0%,
-        #eaf7ff 34%,
-        #80d9ff 67%,
+        #fff 0%,
+        #eaf7ff 35%,
+        #82d9ff 68%,
         #9b8cff 100%
       );
+
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .hero-role {
-      font-size: clamp(29px, 3.2vw, 45px);
+      font-size: clamp(30px, 3.5vw, 46px);
       line-height: 1.08;
-      letter-spacing: -1.8px;
-      font-weight: 750;
-      margin-bottom: 28px;
+      letter-spacing: -2px;
+      font-weight: 800;
+      margin-bottom: 25px;
       max-width: 680px;
     }
 
     .hero-description {
-      color: #9eafc1;
-      font-size: 18px;
-      line-height: 1.75;
+      color: #9eafc0;
+      font-size: 17px;
+      line-height: 1.8;
       max-width: 680px;
-      margin-bottom: 35px;
+      margin-bottom: 32px;
     }
 
-    .hero-buttons {
+    .buttons {
       display: flex;
-      gap: 14px;
+      gap: 13px;
       flex-wrap: wrap;
     }
 
     .btn {
+      min-height: 53px;
+      padding: 0 23px;
+      border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 54px;
-      padding: 0 23px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      cursor: pointer;
+      font-size: 14px;
+      font-weight: 750;
+      transition: .25s ease;
     }
 
     .btn-primary {
-      color: #050607;
       background: #f5f8fb;
+      color: #050607;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      background: white;
-      box-shadow: 0 12px 35px rgba(255,255,255,0.10);
+      box-shadow: 0 15px 35px rgba(255,255,255,.08);
     }
 
     .btn-secondary {
-      color: #eef4f8;
-      border: 1px solid var(--border-strong);
-      background: rgba(255,255,255,0.025);
+      color: #edf4f8;
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--line2);
     }
 
     .btn-secondary:hover {
       transform: translateY(-2px);
-      border-color: rgba(102,217,255,0.45);
-      background: rgba(102,217,255,0.05);
+      border-color: rgba(104,217,255,.45);
+      background: rgba(104,217,255,.05);
     }
 
     /* =========================
-       VIDEO CARD
-    ========================== */
+       VIDEO
+    ========================= */
 
-    .hero-visual {
+    .visual {
       width: 100%;
-      max-width: 560px;
+      max-width: 570px;
       margin-left: auto;
     }
 
     .video-card {
-      position: relative;
-      padding: 11px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 27px;
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,0.055),
-          rgba(255,255,255,0.012)
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.012)
         );
       box-shadow:
-        0 30px 80px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.04);
+        0 35px 90px rgba(0,0,0,.48),
+        inset 0 1px 0 rgba(255,255,255,.04);
     }
 
-    .video-inner {
-      overflow: hidden;
-      border-radius: 20px;
-      background: #080b0e;
-      border: 1px solid rgba(255,255,255,0.07);
+    .video-frame {
+      width: 100%;
       aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 19px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: #07090c;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .video-inner video {
+    .video-frame video {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #080b0e;
+      background: #07090c;
     }
 
-    .video-label {
+    .video-caption {
+      padding: 14px 4px 2px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 14px 5px 2px;
-      color: #8291a3;
-      font-size: 11px;
+      align-items: center;
+      color: #8190a0;
+      font-size: 10px;
       letter-spacing: 1.6px;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 750;
     }
 
-    .video-label span:first-child {
-      color: #aab7c5;
-    }
-
-    .video-status {
-      display: inline-flex;
+    .video-live {
+      display: flex;
       align-items: center;
       gap: 7px;
     }
 
-    .video-status::before {
+    .video-live::before {
       content: "";
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 12px rgba(100,230,177,0.7);
+      box-shadow: 0 0 12px rgba(103,228,177,.7);
     }
 
     /* =========================
        SECTIONS
-    ========================== */
+    ========================= */
 
     section {
-      padding: 120px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 55px;
+      padding: 115px 0;
     }
 
     .section-kicker {
       color: var(--cyan);
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 2.2px;
-      font-weight: 800;
       text-transform: uppercase;
+      font-weight: 850;
       margin-bottom: 14px;
     }
 
     .section-title {
-      font-size: clamp(40px, 5vw, 70px);
-      line-height: 0.98;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: .98;
       letter-spacing: -3px;
-      font-weight: 800;
+      font-weight: 850;
     }
 
-    .section-title span {
+    .gradient {
       background: linear-gradient(
         90deg,
-        #ffffff,
-        #86dcff,
-        #9d8fff
+        #fff,
+        #82d9ff,
+        #9b8cff
       );
       -webkit-background-clip: text;
       background-clip: text;
@@ -380,294 +376,355 @@
     }
 
     .section-description {
-      max-width: 700px;
-      margin-top: 20px;
+      max-width: 720px;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 52px;
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.043),
+          rgba(255,255,255,.012)
+        );
+    }
+
+    .card:hover {
+      border-color: rgba(104,217,255,.17);
     }
 
     /* =========================
        ABOUT
-    ========================== */
+    ========================= */
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
     }
 
-    .card {
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,0.045),
-          rgba(255,255,255,0.015)
-        );
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
+    .about-card {
+      padding: 31px;
     }
 
-    .card:hover {
-      border-color: rgba(102,217,255,0.18);
+    .about-card h3 {
+      font-size: 21px;
+      margin-bottom: 13px;
     }
 
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
-
-    .card p {
+    .about-card p {
       color: var(--muted);
       line-height: 1.8;
     }
 
     /* =========================
        EXPERIENCE
-    ========================== */
+    ========================= */
 
-    .experience-card {
+    .experience {
       padding: 38px;
     }
 
-    .experience-top {
+    .experience-header {
       display: flex;
       justify-content: space-between;
       gap: 25px;
-      margin-bottom: 25px;
+      margin-bottom: 7px;
     }
 
-    .experience-company {
-      font-size: 25px;
-      font-weight: 750;
+    .company {
+      font-size: 26px;
+      font-weight: 800;
     }
 
-    .experience-role {
+    .role {
       color: var(--cyan);
-      margin-top: 5px;
       font-size: 15px;
       font-weight: 700;
+      margin-top: 3px;
     }
 
-    .experience-date {
-      color: #8190a1;
+    .date {
+      color: #8290a0;
       font-size: 14px;
       white-space: nowrap;
     }
 
-    .experience-location {
-      color: #778698;
+    .location {
+      color: #718091;
       font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .career {
+      display: inline-block;
+      color: #b6c4d2;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.025);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 12px;
       margin-bottom: 22px;
     }
 
-    .experience-list {
+    .experience ul {
       padding-left: 20px;
       color: var(--muted);
     }
 
-    .experience-list li {
+    .experience li {
       margin: 11px 0;
       padding-left: 4px;
     }
 
     /* =========================
-       SKILLS
-    ========================== */
+       HIGHLIGHTS
+    ========================= */
 
-    .skill-category {
-      margin-bottom: 45px;
+    .highlights {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
     }
 
-    .skill-category-title {
-      font-size: 15px;
+    .highlight {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.018);
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 27px;
+      background: linear-gradient(90deg,#fff,var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skill-group {
+      margin-bottom: 43px;
+    }
+
+    .skill-group-title {
+      font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1.7px;
-      color: #cbd5e1;
-      margin-bottom: 18px;
+      color: #d4dce5;
+      font-weight: 800;
+      margin-bottom: 17px;
     }
 
-    .skill-list {
+    .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .skill-pill {
-      padding: 11px 16px;
+    .pill {
+      padding: 10px 15px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(255,255,255,0.025);
-      color: #b9c5d3;
-      font-size: 14px;
-      transition: 0.25s ease;
+      border: 1px solid rgba(255,255,255,.085);
+      background: rgba(255,255,255,.025);
+      color: #b8c5d2;
+      font-size: 13px;
     }
 
-    .skill-pill:hover {
-      color: white;
-      border-color: rgba(102,217,255,0.28);
-      background: rgba(102,217,255,0.05);
-      transform: translateY(-1px);
+    .pill.core {
+      color: #d9f4fb;
+      border-color: rgba(104,217,255,.18);
+      background: rgba(104,217,255,.035);
     }
 
-    .tool-pill {
-      border-color: rgba(102,217,255,0.18);
-      color: #d7edf5;
-      background: rgba(102,217,255,0.035);
+    .pill.tool {
+      color: #fff;
+      border-color: rgba(154,140,255,.25);
+      background: rgba(154,140,255,.05);
     }
 
     /* =========================
-       PROJECTS
-    ========================== */
+       PROJECT / FOCUS
+    ========================= */
 
-    .projects-grid {
+    .focus-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
     }
 
-    .project-card {
-      min-height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .focus-card {
+      padding: 30px;
+      min-height: 225px;
     }
 
-    .project-number {
+    .focus-number {
       color: var(--cyan);
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 850;
       letter-spacing: 2px;
-      font-weight: 800;
     }
 
-    .project-card h3 {
-      margin-top: 20px;
-      font-size: 25px;
+    .focus-card h3 {
+      font-size: 23px;
+      margin-top: 19px;
+      margin-bottom: 11px;
     }
 
-    .project-card p {
+    .focus-card p {
       color: var(--muted);
       line-height: 1.75;
-      margin-top: 13px;
     }
 
     /* =========================
        EDUCATION
-    ========================== */
+    ========================= */
 
     .education-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 18px;
     }
 
     .education-card {
-      min-height: 190px;
+      padding: 27px;
+      min-height: 185px;
     }
 
     .education-card small {
       color: var(--cyan);
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 10px;
       font-weight: 800;
     }
 
     .education-card h3 {
+      font-size: 19px;
       margin-top: 13px;
-      font-size: 20px;
     }
 
     .education-card p {
       color: var(--muted);
-      margin-top: 9px;
       font-size: 14px;
+      margin-top: 8px;
     }
 
     /* =========================
        CONTACT
-    ========================== */
+    ========================= */
 
-    .contact-box {
+    .contact-card {
+      padding: 65px 30px;
       text-align: center;
-      padding: 70px 30px;
       background:
         radial-gradient(
           circle at center,
-          rgba(73,139,177,0.11),
+          rgba(73,139,177,.11),
           transparent 52%
         ),
         var(--card);
     }
 
-    .contact-box h2 {
-      font-size: clamp(42px, 6vw, 75px);
-      line-height: 1;
+    .contact-card h2 {
+      font-size: clamp(43px,6vw,74px);
+      line-height: .98;
       letter-spacing: -3px;
     }
 
-    .contact-box p {
-      max-width: 650px;
-      margin: 20px auto 30px;
+    .contact-card p {
+      max-width: 660px;
+      margin: 20px auto 27px;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    .email-display {
-      color: #b7c5d3;
-      font-size: 15px;
-      margin-bottom: 28px;
+    .contact-info {
+      color: #b8c5d1;
+      margin-bottom: 27px;
+      font-size: 14px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     /* =========================
        FOOTER
-    ========================== */
+    ========================= */
 
     footer {
+      border-top: 1px solid rgba(255,255,255,.06);
       padding: 30px 0 45px;
-      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .footer-inner {
+    .footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
     }
 
-    .footer-copy {
-      color: #687687;
-      font-size: 13px;
+    .copyright {
+      color: #697687;
+      font-size: 12px;
     }
 
     .footer-links {
       display: flex;
-      gap: 18px;
+      gap: 19px;
     }
 
     .footer-links a {
-      color: #8997a7;
-      font-size: 13px;
+      color: #8996a5;
+      font-size: 12px;
     }
 
     .footer-links a:hover {
-      color: white;
+      color: #fff;
     }
 
     /* =========================
-       RESPONSIVE
-    ========================== */
+       MOBILE
+    ========================= */
 
     @media (max-width: 950px) {
+
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 55px;
+        gap: 50px;
       }
 
-      .hero-visual {
+      .visual {
         max-width: 720px;
-        margin: 0;
+        margin: auto;
       }
 
       .about-grid {
@@ -677,35 +734,39 @@
       .education-grid {
         grid-template-columns: 1fr;
       }
+
+      .highlights {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 700px) {
+
       .container,
       .nav-inner {
-        width: min(100% - 28px, var(--max));
+        width: calc(100% - 28px);
       }
 
-      nav {
-        height: 68px;
+      .nav {
+        height: 67px;
       }
 
       .nav-links {
-        gap: 13px;
+        gap: 10px;
       }
 
-      .nav-links a:not(.nav-contact) {
+      .nav-links a:not(.nav-call) {
         display: none;
       }
 
-      .nav-contact {
+      .nav-call {
         padding: 9px 14px;
-        font-size: 13px !important;
+        font-size: 12px !important;
       }
 
       .hero {
         min-height: auto;
-        padding-top: 115px;
-        padding-bottom: 65px;
+        padding: 112px 0 65px;
       }
 
       .hero-grid {
@@ -713,9 +774,8 @@
       }
 
       .hero h1 {
-        font-size: clamp(66px, 20vw, 94px);
+        font-size: 74px;
         letter-spacing: -5px;
-        margin-bottom: 25px;
       }
 
       .hero-role {
@@ -724,8 +784,15 @@
       }
 
       .hero-description {
-        font-size: 16px;
-        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
 
       .video-card {
@@ -733,18 +800,20 @@
         border-radius: 20px;
       }
 
-      .video-inner {
-        border-radius: 14px;
+      .video-frame {
         aspect-ratio: 16 / 10;
+        border-radius: 14px;
       }
 
-      .video-inner video {
+      .video-frame video {
+        width: 100%;
+        height: 100%;
         object-fit: contain;
       }
 
-      .video-label {
-        padding: 11px 4px 1px;
-        font-size: 9px;
+      .video-caption {
+        font-size: 8px;
+        padding: 10px 3px 1px;
       }
 
       section {
@@ -755,52 +824,38 @@
         letter-spacing: -2px;
       }
 
-      .card {
+      .experience {
         padding: 25px;
       }
 
-      .experience-card {
-        padding: 25px;
-      }
-
-      .experience-top {
+      .experience-header {
         flex-direction: column;
-        gap: 8px;
+        gap: 5px;
       }
 
-      .experience-date {
+      .date {
         white-space: normal;
       }
 
-      .projects-grid {
+      .highlights {
         grid-template-columns: 1fr;
       }
 
-      .hero-buttons {
-        width: 100%;
+      .focus-grid {
+        grid-template-columns: 1fr;
       }
 
-      .btn {
-        width: 100%;
+      .contact-card {
+        padding: 55px 20px;
       }
 
-      .contact-box {
-        padding: 55px 22px;
+      .contact-buttons {
+        flex-direction: column;
       }
 
-      .footer-inner {
+      .footer {
         flex-direction: column;
         align-items: flex-start;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      * {
-        transition: none !important;
       }
     }
   </style>
@@ -810,9 +865,10 @@
 
   <!-- =========================
        NAVIGATION
-  ========================== -->
+  ========================= -->
 
-  <nav>
+  <nav class="nav">
+
     <div class="nav-inner">
 
       <a href="#home" class="brand">
@@ -820,35 +876,40 @@
       </a>
 
       <div class="nav-links">
+
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Work</a>
 
+        <!-- CONTACT = PHONE CALL -->
         <a
-          href="mailto:workwith.fayazqa@gmail.com"
-          class="nav-contact"
+          href="tel:+916305125681"
+          class="nav-call"
         >
           Contact
         </a>
+
       </div>
 
     </div>
+
   </nav>
 
 
   <!-- =========================
        HERO
-  ========================== -->
+  ========================= -->
 
   <main id="home">
 
     <section class="hero">
+
       <div class="container">
 
         <div class="hero-grid">
 
-          <div class="hero-content">
+          <div>
 
             <div class="eyebrow">
               Data Annotation • Computer Vision • Quality
@@ -861,21 +922,23 @@
             </h2>
 
             <p class="hero-description">
-              Data Annotation and Quality Assurance specialist focused on
-              computer vision datasets, image and video annotation,
-              LiDAR workflows, defect detection, accuracy auditing
-              and high-quality AI training data.
+              Quality Control and Data Annotation specialist with
+              2+ years of progressive experience in autonomous
+              vehicle computer-vision annotation projects,
+              quality audits, defect analysis, process improvement
+              and team operations.
             </p>
 
-            <div class="hero-buttons">
+            <div class="buttons">
 
               <a
-                href="#projects"
+                href="#work"
                 class="btn btn-primary"
               >
                 Explore My Work ↓
               </a>
 
+              <!-- EMAIL -->
               <a
                 href="mailto:workwith.fayazqa@gmail.com"
                 class="btn btn-secondary"
@@ -888,12 +951,15 @@
           </div>
 
 
-          <!-- ACTUAL VIDEO -->
-          <div class="hero-visual">
+          <!-- =========================
+               ACTUAL ANNOTATION VIDEO
+          ========================= -->
+
+          <div class="visual">
 
             <div class="video-card">
 
-              <div class="video-inner">
+              <div class="video-frame">
 
                 <video
                   autoplay
@@ -901,17 +967,23 @@
                   loop
                   playsinline
                   preload="metadata"
-                  aria-label="Fayaz annotation and QA work demonstration"
                 >
                   <source src="intro.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video.
+                  Your browser does not support video.
                 </video>
 
               </div>
 
-              <div class="video-label">
-                <span>Annotation &amp; QA Work</span>
-                <span class="video-status">Live Preview</span>
+              <div class="video-caption">
+
+                <span>
+                  Annotation Work
+                </span>
+
+                <span class="video-live">
+                  Live Preview
+                </span>
+
               </div>
 
             </div>
@@ -921,12 +993,13 @@
         </div>
 
       </div>
+
     </section>
 
 
     <!-- =========================
          ABOUT
-    ========================== -->
+    ========================= -->
 
     <section id="about">
 
@@ -935,18 +1008,18 @@
         <div class="section-heading">
 
           <div class="section-kicker">
-            About
+            About Me
           </div>
 
           <h2 class="section-title">
-            Precision behind <span>the data.</span>
+            Quality behind <span class="gradient">the data.</span>
           </h2>
 
           <p class="section-description">
-            I work across data annotation and quality assurance workflows,
-            with a focus on maintaining annotation accuracy, following
-            project guidelines and identifying quality issues in
-            computer-vision datasets.
+            Data Annotation and Quality Assurance professional
+            experienced in computer-vision datasets, autonomous
+            vehicle annotation, quality validation and large-scale
+            labeling operations.
           </p>
 
         </div>
@@ -954,25 +1027,35 @@
 
         <div class="about-grid">
 
-          <div class="card">
-            <h3>Data Annotation</h3>
+          <div class="card about-card">
+
+            <h3>
+              Data Annotation
+            </h3>
 
             <p>
-              Experience working with image and video annotation,
-              bounding boxes, LiDAR-related workflows and structured
-              labeling tasks for computer-vision datasets.
+              Experience across image and video annotation,
+              LiDAR point clouds, pedestrians, vehicles,
+              bicycles and 2D/3D bounding boxes for machine
+              learning training datasets.
             </p>
+
           </div>
 
 
-          <div class="card">
-            <h3>Quality Assurance</h3>
+          <div class="card about-card">
+
+            <h3>
+              Quality Assurance
+            </h3>
 
             <p>
-              Focused on quality checking, accuracy auditing, defect
-              identification, guideline compliance and maintaining
-              consistent annotation standards.
+              Experienced in annotation validation, quality
+              audits, defect detection, error analysis,
+              guideline compliance, KPI monitoring and
+              corrective action workflows.
             </p>
+
           </div>
 
         </div>
@@ -984,7 +1067,7 @@
 
     <!-- =========================
          EXPERIENCE
-    ========================== -->
+    ========================= -->
 
     <section id="experience">
 
@@ -997,68 +1080,113 @@
           </div>
 
           <h2 class="section-title">
-            Professional <span>experience.</span>
+            Professional <span class="gradient">experience.</span>
           </h2>
 
         </div>
 
 
-        <div class="card experience-card">
+        <div class="card experience">
 
-          <div class="experience-top">
+          <div class="experience-header">
 
             <div>
 
-              <div class="experience-company">
+              <div class="company">
                 Deepen AI India
               </div>
 
-              <div class="experience-role">
-                Arcsine Software Pvt. Ltd.
+              <div class="role">
+                Data Annotation &amp; Quality Assurance Specialist
               </div>
 
             </div>
 
-            <div class="experience-date">
+            <div class="date">
               July 2024 – June 2026
             </div>
 
           </div>
 
 
-          <div class="experience-location">
-            Khammam, Telangana
+          <div class="location">
+            Arcsine Software Pvt. Ltd. · Khammam, Telangana · Full-time
           </div>
 
 
-          <ul class="experience-list">
+          <div class="career">
+            Data Labeler → Shift Lead → Pod Lead → Deputy Team Lead → Final Reviewer
+          </div>
+
+
+          <ul>
 
             <li>
-              Worked on computer-vision data annotation and
-              quality assurance workflows.
+              Maintained <strong>98% annotation accuracy</strong>
+              as Final Reviewer through rigorous quality audits
+              and guideline validation.
             </li>
 
             <li>
-              Performed annotation review and quality checks
-              according to project guidelines.
+              Worked across autonomous-vehicle annotation types
+              including road/lane features, pedestrians, vehicles,
+              bicycles, LiDAR point clouds, 2D/3D bounding boxes
+              and image/video sequences.
             </li>
 
             <li>
-              Worked with image, video and LiDAR-related
-              annotation workflows.
+              Directed operations for
+              <strong>150–200+ annotators</strong> across multiple
+              shifts and coordinated resource planning.
             </li>
 
             <li>
-              Identified annotation defects and supported
-              accuracy and quality improvement.
+              Supervised <strong>8–10 annotators</strong> as Pod Lead,
+              monitored quality KPIs and provided targeted coaching.
             </li>
 
             <li>
-              Supported team workflows, process improvement
-              and consistent delivery standards.
+              Diagnosed annotation defects through systematic
+              error analysis and root-cause investigation.
+            </li>
+
+            <li>
+              Tracked annotation accuracy, completion rates and
+              rework volume against project baselines.
+            </li>
+
+            <li>
+              Designed and delivered onboarding and training
+              programs covering annotation standards and
+              quality procedures.
+            </li>
+
+            <li>
+              Coordinated multiple project workstreams while
+              maintaining quality standards and delivery requirements.
             </li>
 
           </ul>
+
+        </div>
+
+
+        <div class="highlights">
+
+          <div class="highlight">
+            <strong>98%</strong>
+            <span>Annotation accuracy</span>
+          </div>
+
+          <div class="highlight">
+            <strong>150–200+</strong>
+            <span>Annotators directed</span>
+          </div>
+
+          <div class="highlight">
+            <strong>8–10</strong>
+            <span>Annotators supervised as Pod Lead</span>
+          </div>
 
         </div>
 
@@ -1069,7 +1197,7 @@
 
     <!-- =========================
          SKILLS
-    ========================== -->
+    ========================= -->
 
     <section id="skills">
 
@@ -1082,37 +1210,42 @@
           </div>
 
           <h2 class="section-title">
-            What I <span>work with.</span>
+            What I <span class="gradient">bring.</span>
           </h2>
 
           <p class="section-description">
-            Core capabilities and professional tools used across
-            annotation, quality assurance and data workflows.
+            Core competencies, professional capabilities and
+            tools relevant to data annotation, quality assurance
+            and labeling operations.
           </p>
 
         </div>
 
 
-        <!-- CORE SKILLS -->
+        <!-- CORE COMPETENCIES -->
 
-        <div class="skill-category">
+        <div class="skill-group">
 
-          <div class="skill-category-title">
+          <div class="skill-group-title">
             Core Skills
           </div>
 
-          <div class="skill-list">
+          <div class="skills">
 
-            <span class="skill-pill">Image Annotation</span>
-            <span class="skill-pill">Video Annotation</span>
-            <span class="skill-pill">LiDAR</span>
-            <span class="skill-pill">2D Bounding Boxes</span>
-            <span class="skill-pill">3D Bounding Boxes</span>
-            <span class="skill-pill">Data Labeling</span>
-            <span class="skill-pill">QA / QC</span>
-            <span class="skill-pill">Defect Detection</span>
-            <span class="skill-pill">Error Analysis</span>
-            <span class="skill-pill">Accuracy Auditing</span>
+            <span class="pill core">Data Annotation</span>
+            <span class="pill core">Data Labeling</span>
+            <span class="pill core">Image Annotation</span>
+            <span class="pill core">Video Annotation</span>
+            <span class="pill core">LiDAR Annotation</span>
+            <span class="pill core">2D Bounding Boxes</span>
+            <span class="pill core">3D Bounding Boxes</span>
+            <span class="pill core">Quality Assurance</span>
+            <span class="pill core">Quality Control</span>
+            <span class="pill core">Annotation Validation</span>
+            <span class="pill core">Defect Detection</span>
+            <span class="pill core">Error Analysis</span>
+            <span class="pill core">Accuracy Auditing</span>
+            <span class="pill core">Guideline Compliance</span>
 
           </div>
 
@@ -1121,45 +1254,81 @@
 
         <!-- PROFESSIONAL SKILLS -->
 
-        <div class="skill-category">
+        <div class="skill-group">
 
-          <div class="skill-category-title">
+          <div class="skill-group-title">
             Professional Skills
           </div>
 
-          <div class="skill-list">
+          <div class="skills">
 
-            <span class="skill-pill">KPI Tracking</span>
-            <span class="skill-pill">Team Leadership</span>
-            <span class="skill-pill">Client Coordination</span>
-            <span class="skill-pill">Process Improvement</span>
-            <span class="skill-pill">Training</span>
+            <span class="pill">Team Leadership</span>
+            <span class="pill">Performance Monitoring</span>
+            <span class="pill">KPI Tracking</span>
+            <span class="pill">Client Coordination</span>
+            <span class="pill">Escalation Management</span>
+            <span class="pill">Process Improvement</span>
+            <span class="pill">Training &amp; Development</span>
+            <span class="pill">Resource Planning</span>
+            <span class="pill">Task Scheduling</span>
+            <span class="pill">Root Cause Analysis</span>
 
           </div>
 
         </div>
 
 
-        <!-- ONLY ACTUAL TOOLS -->
+        <!-- TOOLS -->
 
-        <div class="skill-category">
+        <div class="skill-group">
 
-          <div class="skill-category-title">
+          <div class="skill-group-title">
             Tools
           </div>
 
-          <div class="skill-list">
+          <div class="skills">
 
-            <span class="skill-pill tool-pill">
+            <span class="pill tool">
               Deepen AI
             </span>
 
-            <span class="skill-pill tool-pill">
+            <span class="pill tool">
               Coda
             </span>
 
-            <span class="skill-pill tool-pill">
+            <span class="pill tool">
               Annotask
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ADDITIONAL TECHNICAL -->
+
+        <div class="skill-group">
+
+          <div class="skill-group-title">
+            Additional Technical Skills
+          </div>
+
+          <div class="skills">
+
+            <span class="pill">
+              Microsoft Excel
+            </span>
+
+            <span class="pill">
+              Google Sheets
+            </span>
+
+            <span class="pill">
+              Basic SQL
+            </span>
+
+            <span class="pill">
+              Computer Hardware Troubleshooting
             </span>
 
           </div>
@@ -1172,104 +1341,105 @@
 
 
     <!-- =========================
-         PROJECTS
-    ========================== -->
+         WORK / FOCUS
+    ========================= -->
 
-    <section id="projects">
+    <section id="work">
 
       <div class="container">
 
         <div class="section-heading">
 
           <div class="section-kicker">
-            Work
+            Professional Focus
           </div>
 
           <h2 class="section-title">
-            Annotation &amp; <span>QA focus.</span>
+            Annotation <span class="gradient">workflows.</span>
           </h2>
 
           <p class="section-description">
-            Areas of work and professional focus across
-            computer-vision annotation and quality assurance.
+            Areas of responsibility reflected in my professional
+            experience.
           </p>
 
         </div>
 
 
-        <div class="projects-grid">
+        <div class="focus-grid">
 
-          <div class="card project-card">
+          <div class="card focus-card">
 
-            <div>
-              <div class="project-number">01 / ANNOTATION</div>
-
-              <h3>
-                Computer Vision Annotation
-              </h3>
-
-              <p>
-                Image and video annotation workflows including
-                object identification, bounding boxes and
-                structured data labeling.
-              </p>
+            <div class="focus-number">
+              01 / COMPUTER VISION
             </div>
+
+            <h3>
+              Image &amp; Video Annotation
+            </h3>
+
+            <p>
+              Structured annotation of image and video sequences
+              for machine-learning and autonomous-vehicle
+              computer-vision datasets.
+            </p>
 
           </div>
 
 
-          <div class="card project-card">
+          <div class="card focus-card">
 
-            <div>
-              <div class="project-number">02 / QUALITY</div>
-
-              <h3>
-                Annotation QA &amp; Auditing
-              </h3>
-
-              <p>
-                Quality review, defect identification, guideline
-                checking and accuracy auditing across annotation
-                datasets.
-              </p>
+            <div class="focus-number">
+              02 / LIDAR
             </div>
+
+            <h3>
+              LiDAR &amp; 3D Annotation
+            </h3>
+
+            <p>
+              LiDAR point-cloud workflows and 2D/3D bounding-box
+              annotation with attention to project guidelines
+              and quality requirements.
+            </p>
 
           </div>
 
 
-          <div class="card project-card">
+          <div class="card focus-card">
 
-            <div>
-              <div class="project-number">03 / LIDAR</div>
-
-              <h3>
-                LiDAR Annotation Workflows
-              </h3>
-
-              <p>
-                Annotation and quality-focused workflows involving
-                LiDAR data and computer-vision dataset requirements.
-              </p>
+            <div class="focus-number">
+              03 / QUALITY
             </div>
+
+            <h3>
+              Quality Control &amp; Auditing
+            </h3>
+
+            <p>
+              Final-review workflows, annotation validation,
+              defect detection, error analysis and corrective
+              action planning.
+            </p>
 
           </div>
 
 
-          <div class="card project-card">
+          <div class="card focus-card">
 
-            <div>
-              <div class="project-number">04 / PROCESS</div>
-
-              <h3>
-                Process &amp; Quality Improvement
-              </h3>
-
-              <p>
-                Supporting consistent annotation standards,
-                identifying recurring issues and improving
-                workflow quality.
-              </p>
+            <div class="focus-number">
+              04 / OPERATIONS
             </div>
+
+            <h3>
+              Team &amp; Process Operations
+            </h3>
+
+            <p>
+              Team coordination, KPI tracking, resource planning,
+              training, client communication and process
+              improvement across annotation operations.
+            </p>
 
           </div>
 
@@ -1282,7 +1452,7 @@
 
     <!-- =========================
          EDUCATION
-    ========================== -->
+    ========================= -->
 
     <section id="education">
 
@@ -1295,7 +1465,7 @@
           </div>
 
           <h2 class="section-title">
-            Learning &amp; <span>certifications.</span>
+            Education &amp; <span class="gradient">training.</span>
           </h2>
 
         </div>
@@ -1305,14 +1475,16 @@
 
           <div class="card education-card">
 
-            <small>Technical Education</small>
+            <small>
+              National Trade Certificate
+            </small>
 
             <h3>
-              NTC Electrician
+              NTC – Electrician
             </h3>
 
             <p>
-              2-Year ITI
+              2-Year ITI Program · 2021 · Grade: 81%
             </p>
 
           </div>
@@ -1320,14 +1492,16 @@
 
           <div class="card education-card">
 
-            <small>School Education</small>
+            <small>
+              Secondary Education
+            </small>
 
             <h3>
-              SSC
+              Secondary School Certificate
             </h3>
 
             <p>
-              Telangana State Board
+              Telangana State Board · 2018 · CGPA: 7.7
             </p>
 
           </div>
@@ -1335,14 +1509,16 @@
 
           <div class="card education-card">
 
-            <small>Safety Training</small>
+            <small>
+              Safety Training
+            </small>
 
             <h3>
               Fire Extinguisher Safety Training
             </h3>
 
             <p>
-              Safety training certificate
+              Current &amp; Valid Certificate
             </p>
 
           </div>
@@ -1356,39 +1532,53 @@
 
     <!-- =========================
          CONTACT
-    ========================== -->
+    ========================= -->
 
     <section id="contact">
 
       <div class="container">
 
-        <div class="card contact-box">
+        <div class="card contact-card">
 
           <div class="section-kicker">
             Contact
           </div>
 
           <h2>
-            Let's work<br>
-            <span>together.</span>
+            Let's connect.
           </h2>
 
           <p>
-            For opportunities, professional discussions or
-            collaboration related to data annotation and
-            quality assurance, feel free to get in touch.
+            Open to professional opportunities, annotation and
+            QA roles, remote or hybrid work, and relevant
+            collaboration.
           </p>
 
-          <div class="email-display">
-            workwith.fayazqa@gmail.com
+          <div class="contact-info">
+            Khammam, Telangana · +91 6305125681 · workwith.fayazqa@gmail.com
           </div>
 
-          <a
-            href="mailto:workwith.fayazqa@gmail.com"
-            class="btn btn-primary"
-          >
-            Send Me an Email ↗
-          </a>
+
+          <div class="contact-buttons">
+
+            <!-- MOBILE CALL -->
+            <a
+              href="tel:+916305125681"
+              class="btn btn-primary"
+            >
+              Call Me ↗
+            </a>
+
+
+            <!-- EMAIL -->
+            <a
+              href="mailto:workwith.fayazqa@gmail.com"
+              class="btn btn-secondary"
+            >
+              Send Me an Email ↗
+            </a>
+
+          </div>
 
         </div>
 
@@ -1401,16 +1591,16 @@
 
   <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
   <footer>
 
     <div class="container">
 
-      <div class="footer-inner">
+      <div class="footer">
 
-        <div class="footer-copy">
-          © 2026 iamshaikfayaz. All rights reserved.
+        <div class="copyright">
+          © 2026 iamshaikfayaz
         </div>
 
         <div class="footer-links">
