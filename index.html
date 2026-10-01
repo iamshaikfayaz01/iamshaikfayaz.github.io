@@ -1,2241 +1,1441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#020305">
-<meta name="description" content="Fayaz — Data Annotation & Quality Assurance Specialist | QA Lead | Labeling Operations">
-<title>Fayaz — Annotation & QA Specialist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --bg:#020305;
-  --bg2:#06090d;
-  --panel:#0a0e13;
-  --panel2:#0d1218;
-  --line:rgba(255,255,255,.09);
-  --line2:rgba(120,200,255,.20);
-  --text:#f4f7fb;
-  --muted:#93a2b5;
-  --soft:#c8d2df;
-  --cyan:#63d8ff;
-  --blue:#7aa7ff;
-  --violet:#a68cff;
-  --green:#6fe0b1;
-  --danger:#ff7f93;
-  --radius:24px;
-  --max:1180px;
-}
+  <title>Fayaz | Annotation & QA Specialist</title>
 
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at 80% 8%, rgba(68,130,180,.10), transparent 28%),
-    radial-gradient(circle at 15% 35%, rgba(80,65,150,.07), transparent 26%),
-    var(--bg);
-  color:var(--text);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;
-}
-
-body.no-scroll{overflow:hidden}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button{font:inherit}
-
-::selection{
-  background:rgba(99,216,255,.25);
-}
-
-.container{
-  width:min(var(--max),calc(100% - 40px));
-  margin:auto;
-}
-
-.section{
-  padding:120px 0;
-  position:relative;
-}
-
-.section-head{
-  max-width:760px;
-  margin-bottom:52px;
-}
-
-.eyebrow{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--cyan);
-  font-size:.76rem;
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.eyebrow:before{
-  content:"";
-  width:30px;
-  height:1px;
-  background:var(--cyan);
-}
-
-h2{
-  margin:14px 0 14px;
-  font-size:clamp(2.4rem,5vw,4.7rem);
-  line-height:.98;
-  letter-spacing:-.055em;
-}
-
-.lead{
-  color:var(--muted);
-  font-size:1.08rem;
-  max-width:720px;
-}
-
-
-/* =========================
-   INTRO VIDEO
-========================= */
-
-#intro{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:1;
-  visibility:visible;
-  transition:opacity .7s ease,visibility .7s ease;
-}
-
-#intro.hide{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-
-#introVideo{
-  width:100vw;
-  height:100vh;
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-  object-position:center;
-  display:block;
-  background:#000;
-}
-
-.intro-controls{
-  position:absolute;
-  right:24px;
-  bottom:24px;
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-.intro-btn{
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(5,7,10,.75);
-  backdrop-filter:blur(12px);
-  color:#fff;
-  border-radius:999px;
-  padding:11px 17px;
-  cursor:pointer;
-}
-
-.intro-btn:hover{
-  border-color:rgba(99,216,255,.55);
-}
-
-.intro-note{
-  position:absolute;
-  left:24px;
-  bottom:24px;
-  color:rgba(255,255,255,.55);
-  font-size:.78rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(2,3,5,.92),
-      rgba(2,3,5,.45),
-      transparent
-    );
-  padding:22px 0;
-}
-
-.nav-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-  font-weight:900;
-  font-size:1.2rem;
-  letter-spacing:-.04em;
-}
-
-.brand span{
-  color:var(--cyan);
-}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
-
-.nav-links a{
-  font-size:.9rem;
-  color:#b9c3d0;
-  transition:.2s;
-}
-
-.nav-links a:hover{
-  color:#fff;
-}
-
-.nav-contact{
-  border:1px solid var(--line);
-  padding:9px 16px;
-  border-radius:999px;
-  background:rgba(255,255,255,.025);
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:150px 0 90px;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:72px;
-  align-items:center;
-}
-
-.hero h1{
-  margin:16px 0 14px;
-  font-size:clamp(4.3rem,10vw,8.6rem);
-  line-height:.82;
-  letter-spacing:-.075em;
-  background:
-    linear-gradient(
-      100deg,
-      #f8fbff 10%,
-      #a9ddff 48%,
-      #9d8cff 90%
-    );
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.hero h3{
-  margin:0 0 22px;
-  font-size:clamp(1.55rem,3vw,2.35rem);
-  letter-spacing:-.04em;
-}
-
-.hero-copy{
-  font-size:1.08rem;
-  color:#aebdce;
-  max-width:700px;
-}
-
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:32px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:13px 19px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  color:#fff;
-  background:#0a0d11;
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  border-color:var(--line2);
-}
-
-.btn.primary{
-  background:#f5f8fb;
-  color:#050608;
-  border-color:#fff;
-  font-weight:800;
-}
-
-.btn.primary:hover{
-  box-shadow:0 0 35px rgba(99,216,255,.15);
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:52px;
-  max-width:670px;
-}
-
-.stat{
-  padding:18px;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:rgba(255,255,255,.025);
-}
-
-.stat strong{
-  display:block;
-  font-size:1.6rem;
-  letter-spacing:-.04em;
-}
-
-.stat span{
-  display:block;
-  color:var(--muted);
-  font-size:.78rem;
-  margin-top:3px;
-}
-
-
-/* =========================
-   ANNOTATION QA WORKSPACE
-========================= */
-
-.workspace{
-  border:1px solid rgba(120,200,255,.16);
-  border-radius:30px;
-  padding:16px;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.035),
-      rgba(255,255,255,.012)
-    ),
-    #080c11;
-  box-shadow:
-    0 30px 90px rgba(0,0,0,.45),
-    0 0 80px rgba(70,160,220,.06);
-}
-
-.workspace-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:8px 8px 15px;
-}
-
-.workspace-title{
-  font-size:.8rem;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.online{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#91a3b7;
-  font-size:.72rem;
-}
-
-.online i{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 12px var(--green);
-}
-
-.frame{
-  position:relative;
-  aspect-ratio:16/10;
-  overflow:hidden;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,.08);
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 58%,
-      rgba(255,255,255,.025) 58%
-    ),
-    linear-gradient(
-      170deg,
-      #111a22 0 54%,
-      #15191e 54% 100%
-    );
-}
-
-.frame:before{
-  content:"";
-  position:absolute;
-  inset:54% 0 0;
-  background:
-    linear-gradient(
-      155deg,
-      transparent 0 48%,
-      rgba(99,216,255,.055) 48% 49%,
-      transparent 49%
-    ),
-    linear-gradient(
-      25deg,
-      transparent 0 48%,
-      rgba(99,216,255,.04) 48% 49%,
-      transparent 49%
-    );
-}
-
-.building{
-  position:absolute;
-  top:14%;
-  width:18%;
-  height:43%;
-  background:#17212a;
-  border:1px solid rgba(255,255,255,.04);
-}
-
-.b1{
-  left:3%;
-  height:39%;
-}
-
-.b2{
-  left:23%;
-  height:49%;
-}
-
-.b3{
-  right:4%;
-  height:45%;
-}
-
-.road-line{
-  position:absolute;
-  left:50%;
-  top:55%;
-  width:5px;
-  height:45%;
-  background:rgba(255,255,255,.12);
-  transform:skewX(-12deg);
-}
-
-.obj{
-  position:absolute;
-  border:2px solid var(--cyan);
-  background:rgba(99,216,255,.045);
-  box-shadow:0 0 22px rgba(99,216,255,.08);
-}
-
-.obj span{
-  position:absolute;
-  top:-25px;
-  left:-2px;
-  white-space:nowrap;
-  padding:3px 7px;
-  border-radius:5px;
-  background:#071018;
-  border:1px solid rgba(99,216,255,.35);
-  color:#aeeaff;
-  font-size:.61rem;
-  font-weight:800;
-  letter-spacing:.05em;
-}
-
-.car1{
-  left:14%;
-  bottom:17%;
-  width:17%;
-  height:18%;
-}
-
-.car2{
-  left:39%;
-  bottom:11%;
-  width:20%;
-  height:20%;
-  border-color:var(--violet);
-}
-
-.car2 span{
-  color:#cfc4ff;
-  border-color:rgba(166,140,255,.4);
-}
-
-.person{
-  left:70%;
-  bottom:19%;
-  width:7%;
-  height:24%;
-  border-color:var(--green);
-}
-
-.person span{
-  color:#9bf0c9;
-  border-color:rgba(111,224,177,.4);
-}
-
-.cycle{
-  left:78%;
-  bottom:12%;
-  width:8%;
-  height:15%;
-  border-color:#ffd27a;
-}
-
-.cycle span{
-  color:#ffe2ad;
-  border-color:rgba(255,210,122,.4);
-}
-
-.traffic{
-  right:7%;
-  top:22%;
-  width:4%;
-  height:24%;
-  border-color:#ff8da0;
-}
-
-.traffic span{
-  color:#ffc0ca;
-  border-color:rgba(255,127,147,.4);
-}
-
-.qa-bar{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:8px;
-  margin-top:10px;
-}
-
-.qa{
-  padding:11px 12px;
-  border-radius:12px;
-  background:#090d12;
-  border:1px solid var(--line);
-}
-
-.qa b{
-  display:block;
-  font-size:.72rem;
-}
-
-.qa small{
-  color:var(--muted);
-}
-
-.workspace-footer{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:13px 5px 1px;
-  color:#7e8d9f;
-  font-size:.68rem;
-  text-transform:uppercase;
-  letter-spacing:.09em;
-}
-
-
-/* =========================
-   CARDS
-========================= */
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.card{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.018);
-  border-radius:var(--radius);
-  padding:28px;
-}
-
-.card:hover{
-  border-color:rgba(120,200,255,.18);
-}
-
-.card h3{
-  margin:0 0 8px;
-  font-size:1.25rem;
-}
-
-.card p{
-  color:var(--muted);
-  margin:0;
-}
-
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.timeline{
-  display:grid;
-  gap:16px;
-}
-
-.timeline-card{
-  position:relative;
-  padding:30px 32px;
-}
-
-.timeline-card:before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:30px;
-  width:3px;
-  height:45px;
-  background:
-    linear-gradient(
-      var(--cyan),
-      var(--violet)
-    );
-  border-radius:99px;
-}
-
-.role{
-  font-size:1.3rem;
-  font-weight:850;
-  letter-spacing:-.025em;
-}
-
-.company{
-  color:var(--cyan);
-  font-weight:750;
-}
-
-.meta{
-  color:#728195;
-  font-size:.82rem;
-  margin:4px 0 18px;
-}
-
-.progression{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:18px;
-}
-
-.progression span{
-  padding:6px 9px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  color:#aebaca;
-  font-size:.72rem;
-}
-
-ul.clean{
-  margin:0;
-  padding-left:18px;
-  color:#aab7c7;
-}
-
-ul.clean li{
-  margin:9px 0;
-}
-
-.metric-row{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:22px;
-}
-
-.metric{
-  padding:20px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:
-    linear-gradient(
-      145deg,
-      rgba(99,216,255,.055),
-      rgba(255,255,255,.01)
-    );
-}
-
-.metric strong{
-  font-size:2rem;
-  letter-spacing:-.06em;
-}
-
-.metric small{
-  display:block;
-  color:var(--muted);
-  font-size:.75rem;
-  margin-top:2px;
-}
-
-
-/* =========================
-   SKILLS
-========================= */
-
-.skill-groups{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:16px;
-}
-
-.skill-card{
-  padding:30px;
-}
-
-.skill-card h3{
-  margin:0 0 17px;
-  font-size:1rem;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:#dbe5ef;
-}
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-}
-
-.tag{
-  padding:8px 11px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:rgba(255,255,255,.018);
-  color:#b8c5d4;
-  font-size:.78rem;
-}
-
-.tag.hot{
-  border-color:rgba(99,216,255,.28);
-  background:rgba(99,216,255,.06);
-  color:#d9f5ff;
-}
-
-.tag.violet{
-  border-color:rgba(166,140,255,.25);
-  background:rgba(166,140,255,.055);
-  color:#ddd5ff;
-}
-
-
-/* =========================
-   TOOLS
-========================= */
-
-.tool-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.tool{
-  min-height:150px;
-  padding:22px;
-  border:1px solid var(--line);
-  border-radius:20px;
-  background:#080c11;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:.25s;
-}
-
-.tool:hover{
-  transform:translateY(-3px);
-  border-color:rgba(99,216,255,.28);
-}
-
-.tool .num{
-  font-size:.68rem;
-  color:#667587;
-  letter-spacing:.1em;
-}
-
-.tool strong{
-  font-size:1.1rem;
-}
-
-.tool small{
-  color:var(--muted);
-  font-size:.74rem;
-}
-
-
-/* =========================
-   PROJECTS
-========================= */
-
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-
-.project{
-  min-height:240px;
-  position:relative;
-  overflow:hidden;
-}
-
-.project:after{
-  content:"";
-  position:absolute;
-  right:-80px;
-  bottom:-100px;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(99,216,255,.12),
-      transparent 65%
-    );
-}
-
-.project-num{
-  color:#627184;
-  font-size:.7rem;
-  letter-spacing:.15em;
-}
-
-.project h3{
-  font-size:1.55rem;
-  letter-spacing:-.035em;
-  margin:24px 0 10px;
-}
-
-.project p{
-  color:var(--muted);
-}
-
-.project-label{
-  display:inline-block;
-  margin-top:14px;
-  color:#b9dfff;
-  font-size:.72rem;
-}
-
-
-/* =========================
-   EDUCATION
-========================= */
-
-.edu-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:16px;
-}
-
-.edu-card strong{
-  display:block;
-  font-size:1rem;
-}
-
-.edu-card span{
-  color:var(--muted);
-  font-size:.82rem;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-  border:1px solid rgba(99,216,255,.14);
-  border-radius:32px;
-  padding:42px;
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(99,216,255,.09),
-      transparent 32%
-    ),
-    rgba(255,255,255,.018);
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:35px;
-  align-items:end;
-}
-
-.contact h2{
-  margin-top:10px;
-}
-
-.contact-list{
-  display:grid;
-  gap:10px;
-}
-
-.contact-item{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  font-size:.9rem;
-}
-
-.contact-item span:first-child{
-  color:#69798c;
-}
-
-.contact-item a{
-  color:#dce7f2;
-  text-align:right;
-}
-
-.mail-btn{
-  margin-top:18px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  padding:35px 0 55px;
-  color:#566477;
-  font-size:.75rem;
-  border-top:1px solid var(--line);
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:900px){
-
-  .container{
-    width:min(
-      var(--max),
-      calc(100% - 28px)
-    );
-  }
-
-  .nav{
-    padding:16px 0;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    padding-top:120px;
-  }
-
-  .hero-grid,
-  .grid-2,
-  .skill-groups,
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-grid{
-    gap:45px;
-  }
-
-  .hero h1{
-    font-size:clamp(
-      4rem,
-      22vw,
-      7rem
-    );
-  }
-
-  .stats{
-    grid-template-columns:
-      1fr 1fr 1fr;
-  }
-
-  .tool-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .edu-grid{
-    grid-template-columns:1fr;
-  }
-
-  .section{
-    padding:90px 0;
-  }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px){
-
-  .intro-note{
-    display:none;
-  }
-
-  .intro-controls{
-    right:14px;
-    bottom:14px;
-  }
-
-  .intro-btn{
-    padding:9px 13px;
-    font-size:.8rem;
-  }
-
-  #introVideo{
-    object-fit:contain;
-    width:100%;
-    height:100%;
-  }
-
-  .hero{
-    min-height:auto;
-    padding:120px 0 75px;
-  }
-
-  .hero h1{
-    font-size:clamp(
-      4rem,
-      25vw,
-      6.3rem
-    );
-  }
-
-  .hero h3{
-    font-size:1.5rem;
-  }
-
-  .hero-copy{
-    font-size:.98rem;
-  }
-
-  .stats{
-    grid-template-columns:1fr;
-    gap:8px;
-    margin-top:34px;
-  }
-
-  .stat{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-
-  .stat strong{
-    font-size:1.35rem;
-  }
-
-  .workspace{
-    padding:10px;
-    border-radius:22px;
-  }
-
-  .frame{
-    aspect-ratio:4/3;
-  }
-
-  .frame .obj span{
-    font-size:.5rem;
-  }
-
-  .qa-bar{
-    grid-template-columns:1fr;
-  }
-
-  .grid-2,
-  .project-grid{
-    grid-template-columns:1fr;
-  }
-
-  .metric-row{
-    grid-template-columns:1fr;
-  }
-
-  .tool-grid{
-    grid-template-columns:1fr;
-  }
-
-  .contact{
-    padding:28px 22px;
-  }
-
-  .contact-item{
-    display:block;
-  }
-
-  .contact-item a{
-    display:block;
-    text-align:left;
-    margin-top:4px;
-    word-break:break-word;
-  }
-
-  .footer-inner{
-    display:block;
-  }
-
-  .footer-inner div+div{
-    margin-top:8px;
-  }
-}
-</style>
-</head>
-
-
-<body class="no-scroll">
-
-
-<!-- =========================
-     INTRO VIDEO
-========================= -->
-
-<section id="intro" aria-label="Intro video">
-
-  <video
-    id="introVideo"
-    autoplay
-    muted
-    playsinline
-    preload="auto"
+  <meta
+    name="description"
+    content="Fayaz — Data Annotation and Quality Assurance Specialist focused on computer vision annotation, LiDAR workflows, quality auditing and AI training data."
   >
 
-    <source
-      src="intro.mp4"
-      type="video/mp4"
-    >
+  <style>
+    :root {
+      --bg: #030405;
+      --bg-soft: #07090c;
+      --card: #0a0d11;
+      --card-2: #0d1116;
+      --border: rgba(255,255,255,0.09);
+      --border-strong: rgba(255,255,255,0.15);
+      --text: #f4f7fb;
+      --muted: #9aa7b7;
+      --muted-2: #718096;
+      --cyan: #66d9ff;
+      --blue: #79a7ff;
+      --purple: #9c8cff;
+      --green: #64e6b1;
+      --max: 1180px;
+      --radius: 24px;
+    }
 
-  </video>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <div class="intro-note">
-    Fayaz • Annotation &amp; QA Specialist
-  </div>
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <div class="intro-controls">
+    body {
+      background:
+        radial-gradient(circle at 75% 18%, rgba(62, 117, 150, 0.10), transparent 28%),
+        radial-gradient(circle at 15% 75%, rgba(80, 62, 145, 0.08), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    <button
-      class="intro-btn"
-      id="skipIntro"
-      type="button"
-    >
-      Skip intro →
-    </button>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  </div>
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
 
-</section>
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
+    /* =========================
+       NAVIGATION
+    ========================== */
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 78px;
+      background: rgba(3, 4, 5, 0.72);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-<nav class="nav">
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  <div class="container nav-inner">
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+    }
 
-    <a
-      class="brand"
-      href="#top"
-    >
-      iamshaik<span>fayaz</span>
-    </a>
+    .brand span {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        var(--cyan),
+        var(--purple)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-    <div class="nav-links">
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
 
-      <a href="#about">
-        About
+    .nav-links a {
+      color: #aeb8c6;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-contact {
+      border: 1px solid var(--border-strong);
+      padding: 11px 19px;
+      border-radius: 999px;
+      color: #eef4fa !important;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .nav-contact:hover {
+      border-color: rgba(102,217,255,0.45);
+      background: rgba(102,217,255,0.06);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 145px;
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(102,217,255,0.7);
+    }
+
+    .hero h1 {
+      font-size: clamp(72px, 9vw, 128px);
+      line-height: 0.86;
+      letter-spacing: -7px;
+      margin-bottom: 30px;
+      font-weight: 850;
+      background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #eaf7ff 34%,
+        #80d9ff 67%,
+        #9b8cff 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      font-size: clamp(29px, 3.2vw, 45px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      font-weight: 750;
+      margin-bottom: 28px;
+      max-width: 680px;
+    }
+
+    .hero-description {
+      color: #9eafc1;
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 54px;
+      padding: 0 23px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: #050607;
+      background: #f5f8fb;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: white;
+      box-shadow: 0 12px 35px rgba(255,255,255,0.10);
+    }
+
+    .btn-secondary {
+      color: #eef4f8;
+      border: 1px solid var(--border-strong);
+      background: rgba(255,255,255,0.025);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(102,217,255,0.45);
+      background: rgba(102,217,255,0.05);
+    }
+
+    /* =========================
+       VIDEO CARD
+    ========================== */
+
+    .hero-visual {
+      width: 100%;
+      max-width: 560px;
+      margin-left: auto;
+    }
+
+    .video-card {
+      position: relative;
+      padding: 11px;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.055),
+          rgba(255,255,255,0.012)
+        );
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .video-inner {
+      overflow: hidden;
+      border-radius: 20px;
+      background: #080b0e;
+      border: 1px solid rgba(255,255,255,0.07);
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-inner video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080b0e;
+    }
+
+    .video-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 5px 2px;
+      color: #8291a3;
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .video-label span:first-child {
+      color: #aab7c5;
+    }
+
+    .video-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .video-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(100,230,177,0.7);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 120px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 2.2px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(40px, 5vw, 70px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      font-weight: 800;
+    }
+
+    .section-title span {
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #86dcff,
+        #9d8fff
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-description {
+      max-width: 700px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.045),
+          rgba(255,255,255,0.015)
+        );
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .card:hover {
+      border-color: rgba(102,217,255,0.18);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .experience-card {
+      padding: 38px;
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .experience-company {
+      font-size: 25px;
+      font-weight: 750;
+    }
+
+    .experience-role {
+      color: var(--cyan);
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .experience-date {
+      color: #8190a1;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .experience-location {
+      color: #778698;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .experience-list {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .experience-list li {
+      margin: 11px 0;
+      padding-left: 4px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skill-category {
+      margin-bottom: 45px;
+    }
+
+    .skill-category-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.025);
+      color: #b9c5d3;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    .skill-pill:hover {
+      color: white;
+      border-color: rgba(102,217,255,0.28);
+      background: rgba(102,217,255,0.05);
+      transform: translateY(-1px);
+    }
+
+    .tool-pill {
+      border-color: rgba(102,217,255,0.18);
+      color: #d7edf5;
+      background: rgba(102,217,255,0.035);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-number {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    .project-card h3 {
+      margin-top: 20px;
+      font-size: 25px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-top: 13px;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .education-card {
+      min-height: 190px;
+    }
+
+    .education-card small {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .education-card h3 {
+      margin-top: 13px;
+      font-size: 20px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      margin-top: 9px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-box {
+      text-align: center;
+      padding: 70px 30px;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(73,139,177,0.11),
+          transparent 52%
+        ),
+        var(--card);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(42px, 6vw, 75px);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .contact-box p {
+      max-width: 650px;
+      margin: 20px auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .email-display {
+      color: #b7c5d3;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 30px 0 45px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #687687;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #8997a7;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .hero-visual {
+        max-width: 720px;
+        margin: 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container,
+      .nav-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      nav {
+        height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a:not(.nav-contact) {
+        display: none;
+      }
+
+      .nav-contact {
+        padding: 9px 14px;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 115px;
+        padding-bottom: 65px;
+      }
+
+      .hero-grid {
+        gap: 42px;
+      }
+
+      .hero h1 {
+        font-size: clamp(66px, 20vw, 94px);
+        letter-spacing: -5px;
+        margin-bottom: 25px;
+      }
+
+      .hero-role {
+        font-size: 30px;
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .video-card {
+        padding: 7px;
+        border-radius: 20px;
+      }
+
+      .video-inner {
+        border-radius: 14px;
+        aspect-ratio: 16 / 10;
+      }
+
+      .video-inner video {
+        object-fit: contain;
+      }
+
+      .video-label {
+        padding: 11px 4px 1px;
+        font-size: 9px;
+      }
+
+      section {
+        padding: 85px 0;
+      }
+
+      .section-title {
+        letter-spacing: -2px;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      .experience-card {
+        padding: 25px;
+      }
+
+      .experience-top {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .experience-date {
+        white-space: normal;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-box {
+        padding: 55px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav>
+    <div class="nav-inner">
+
+      <a href="#home" class="brand">
+        iamshaik<span>fayaz</span>
       </a>
 
-      <a href="#experience">
-        Experience
-      </a>
-
-      <a href="#skills">
-        Skills
-      </a>
-
-      <a href="#projects">
-        Projects
-      </a>
-
-      <a
-        class="nav-contact"
-        href="mailto:workwith.fayazqa@gmail.com?subject=Portfolio%20Enquiry%20for%20Fayaz"
-      >
-        Contact
-      </a>
-
-    </div>
-
-  </div>
-
-</nav>
-
-
-<main id="top">
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        DATA ANNOTATION • COMPUTER VISION • QUALITY
-      </div>
-
-      <h1>
-        Fayaz
-      </h1>
-
-      <h3>
-        Data Annotation &amp; Quality Assurance Specialist
-      </h3>
-
-      <p class="hero-copy">
-
-        Quality Control and Data Annotation specialist with 2+ years of experience in
-        autonomous-vehicle computer-vision annotation projects, quality audits,
-        defect analysis, process improvement and team operations.
-
-      </p>
-
-      <div class="actions">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
 
         <a
-          class="btn primary"
-          href="#experience"
+          href="mailto:workwith.fayazqa@gmail.com"
+          class="nav-contact"
         >
-          Explore My Work ↓
+          Contact
         </a>
-
-        <a
-          class="btn"
-          href="mailto:workwith.fayazqa@gmail.com?subject=Portfolio%20Enquiry%20for%20Fayaz&body=Hello%20Fayaz%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20regarding%20an%20opportunity.%0A%0ARegards%2C"
-        >
-          Send Me an Email ↗
-        </a>
-
-      </div>
-
-
-      <div class="stats">
-
-        <div class="stat">
-          <strong>98%</strong>
-          <span>Annotation accuracy</span>
-        </div>
-
-        <div class="stat">
-          <strong>2+ yrs</strong>
-          <span>Industry experience</span>
-        </div>
-
-        <div class="stat">
-          <strong>200+</strong>
-          <span>Team operations</span>
-        </div>
-
       </div>
 
     </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-grid">
+
+          <div class="hero-content">
+
+            <div class="eyebrow">
+              Data Annotation • Computer Vision • Quality
+            </div>
+
+            <h1>Fayaz</h1>
+
+            <h2 class="hero-role">
+              Annotation &amp; QA Specialist
+            </h2>
+
+            <p class="hero-description">
+              Data Annotation and Quality Assurance specialist focused on
+              computer vision datasets, image and video annotation,
+              LiDAR workflows, defect detection, accuracy auditing
+              and high-quality AI training data.
+            </p>
+
+            <div class="hero-buttons">
+
+              <a
+                href="#projects"
+                class="btn btn-primary"
+              >
+                Explore My Work ↓
+              </a>
+
+              <a
+                href="mailto:workwith.fayazqa@gmail.com"
+                class="btn btn-secondary"
+              >
+                Send Me an Email ↗
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- ACTUAL VIDEO -->
+          <div class="hero-visual">
+
+            <div class="video-card">
+
+              <div class="video-inner">
+
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Fayaz annotation and QA work demonstration"
+                >
+                  <source src="intro.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+
+              </div>
+
+              <div class="video-label">
+                <span>Annotation &amp; QA Work</span>
+                <span class="video-status">Live Preview</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
 
     <!-- =========================
-         ANNOTATION WORKSPACE
+         ABOUT
     ========================== -->
 
-    <div
-      class="workspace"
-      aria-label="Annotation QA workspace"
-    >
+    <section id="about">
 
-      <div class="workspace-top">
+      <div class="container">
 
-        <div class="workspace-title">
-          Annotation QA Workspace
-        </div>
+        <div class="section-heading">
 
-        <div class="online">
-          <i></i>
-          QA MODE
-        </div>
-
-      </div>
-
-
-      <div class="frame">
-
-        <div class="building b1"></div>
-        <div class="building b2"></div>
-        <div class="building b3"></div>
-
-        <div class="road-line"></div>
-
-
-        <div class="obj car1">
-          <span>
-            CAR 01 • 2D BOX
-          </span>
-        </div>
-
-
-        <div class="obj car2">
-          <span>
-            VEHICLE • REVIEW
-          </span>
-        </div>
-
-
-        <div class="obj person">
-          <span>
-            PERSON • VALIDATED
-          </span>
-        </div>
-
-
-        <div class="obj cycle">
-          <span>
-            BICYCLE • QA
-          </span>
-        </div>
-
-
-        <div class="obj traffic">
-          <span>
-            TRAFFIC LIGHT
-          </span>
-        </div>
-
-      </div>
-
-
-      <div class="qa-bar">
-
-        <div class="qa">
-          <b>Frame</b>
-          <small>01842 / 02400</small>
-        </div>
-
-        <div class="qa">
-          <b>Objects</b>
-          <small>05 reviewed</small>
-        </div>
-
-        <div class="qa">
-          <b>QA Status</b>
-          <small>Pass • guideline checked</small>
-        </div>
-
-      </div>
-
-
-      <div class="workspace-footer">
-
-        <span>
-          Bounding Box Validation
-        </span>
-
-        <span>
-          Defect Review • Accuracy Audit
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-  class="section"
-  id="about"
->
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        ABOUT
-      </div>
-
-      <h2>
-        Quality first. Data that machines can trust.
-      </h2>
-
-      <p class="lead">
-
-        My work sits between annotation operations and quality assurance —
-        validating training data, finding defects, enforcing guidelines
-        and helping teams deliver consistent results at scale.
-
-      </p>
-
-    </div>
-
-
-    <div class="grid-2">
-
-      <article class="card">
-
-        <h3>
-          What I do
-        </h3>
-
-        <p>
-
-          Image and video annotation, LiDAR point-cloud labeling,
-          2D/3D bounding boxes, annotation validation, defect detection,
-          error analysis, accuracy auditing, KPI monitoring and process improvement.
-
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <h3>
-          How I work
-        </h3>
-
-        <p>
-
-          Detail-focused and process-driven:
-          understand the guideline, inspect the data,
-          identify defects, validate rework, track quality metrics
-          and communicate clear corrective actions.
-
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     EXPERIENCE
-========================= -->
-
-<section
-  class="section"
-  id="experience"
->
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        EXPERIENCE
-      </div>
-
-      <h2>
-        Progression built around quality.
-      </h2>
-
-      <p class="lead">
-        Deepen AI India • Arcsine Software Pvt. Ltd. • Khammam, Telangana
-      </p>
-
-    </div>
-
-
-    <div class="timeline">
-
-      <article class="card timeline-card">
-
-        <div class="role">
-          Data Annotation &amp; Quality Assurance Specialist
-        </div>
-
-        <div class="company">
-          Deepen AI India (Arcsine Software Pvt. Ltd.)
-        </div>
-
-        <div class="meta">
-          July 2024 – June 2026 • Full-time • 2 years
-        </div>
-
-
-        <div class="progression">
-
-          <span>
-            Data Labeler
-          </span>
-
-          <span>
-            Shift Lead
-          </span>
-
-          <span>
-            Pod Lead
-          </span>
-
-          <span>
-            Deputy Team Lead
-          </span>
-
-          <span>
-            Final Reviewer (Quality Control)
-          </span>
-
-        </div>
-
-
-        <ul class="clean">
-
-          <li>
-            Maintained 98% annotation accuracy as Final Reviewer
-            through rigorous quality audits across autonomous-vehicle annotation types.
-          </li>
-
-          <li>
-            Worked with road/lane features, pedestrians, vehicles,
-            bicycles, LiDAR point clouds, 2D/3D bounding boxes,
-            and image/video sequences.
-          </li>
-
-          <li>
-            Directed operations for 150–200+ annotators across multiple
-            shifts and coordinated resources around project milestones.
-          </li>
-
-          <li>
-            Supervised 8–10 annotators as Pod Lead,
-            monitored quality KPIs and delivered targeted coaching.
-          </li>
-
-          <li>
-            Diagnosed annotation defects using error analysis and
-            root-cause investigation; validated rework and corrective actions.
-          </li>
-
-          <li>
-            Tracked annotation accuracy, completion rates and
-            rework volume against project baselines.
-          </li>
-
-          <li>
-            Supported client reviews, escalation protocols,
-            onboarding, training and workflow standardization.
-          </li>
-
-        </ul>
-
-
-        <div class="metric-row">
-
-          <div class="metric">
-            <strong>98%</strong>
-            <small>Annotation accuracy</small>
+          <div class="section-kicker">
+            About
           </div>
 
-          <div class="metric">
-            <strong>150–200+</strong>
-            <small>Annotators coordinated</small>
+          <h2 class="section-title">
+            Precision behind <span>the data.</span>
+          </h2>
+
+          <p class="section-description">
+            I work across data annotation and quality assurance workflows,
+            with a focus on maintaining annotation accuracy, following
+            project guidelines and identifying quality issues in
+            computer-vision datasets.
+          </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="card">
+            <h3>Data Annotation</h3>
+
+            <p>
+              Experience working with image and video annotation,
+              bounding boxes, LiDAR-related workflows and structured
+              labeling tasks for computer-vision datasets.
+            </p>
           </div>
 
-          <div class="metric">
-            <strong>8–10</strong>
-            <small>Annotators supervised as Pod Lead</small>
+
+          <div class="card">
+            <h3>Quality Assurance</h3>
+
+            <p>
+              Focused on quality checking, accuracy auditing, defect
+              identification, guideline compliance and maintaining
+              consistent annotation standards.
+            </p>
           </div>
 
         </div>
 
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CORE SKILLS
-========================= -->
-
-<section
-  class="section"
-  id="skills"
->
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        CORE SKILLS
       </div>
 
-      <h2>
-        Specialist skills, clearly separated from tools.
-      </h2>
-
-      <p class="lead">
-
-        The skills below are based on the competencies and technical
-        skills listed in the supplied resume. Tools are kept separate
-        so the portfolio does not overstate tool expertise.
-
-      </p>
-
-    </div>
+    </section>
 
 
-    <div class="skill-groups">
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
 
+    <section id="experience">
 
-      <article class="card skill-card">
+      <div class="container">
 
-        <h3>
-          Annotation &amp; QA
-        </h3>
+        <div class="section-heading">
 
-        <div class="tags">
+          <div class="section-kicker">
+            Experience
+          </div>
 
-          <span class="tag hot">
-            Data Annotation
-          </span>
-
-          <span class="tag hot">
-            Data Labeling
-          </span>
-
-          <span class="tag hot">
-            Image Annotation
-          </span>
-
-          <span class="tag hot">
-            Video Annotation
-          </span>
-
-          <span class="tag hot">
-            LiDAR Annotation
-          </span>
-
-          <span class="tag hot">
-            2D Bounding Boxes
-          </span>
-
-          <span class="tag hot">
-            3D Bounding Boxes
-          </span>
-
-          <span class="tag hot">
-            Quality Assurance
-          </span>
-
-          <span class="tag hot">
-            Quality Control
-          </span>
-
-          <span class="tag hot">
-            Annotation Validation
-          </span>
-
-          <span class="tag hot">
-            Defect Detection
-          </span>
-
-          <span class="tag hot">
-            Error Analysis
-          </span>
-
-          <span class="tag hot">
-            Accuracy Auditing
-          </span>
-
-          <span class="tag hot">
-            Guideline Compliance
-          </span>
+          <h2 class="section-title">
+            Professional <span>experience.</span>
+          </h2>
 
         </div>
 
-      </article>
+
+        <div class="card experience-card">
+
+          <div class="experience-top">
+
+            <div>
+
+              <div class="experience-company">
+                Deepen AI India
+              </div>
+
+              <div class="experience-role">
+                Arcsine Software Pvt. Ltd.
+              </div>
+
+            </div>
+
+            <div class="experience-date">
+              July 2024 – June 2026
+            </div>
+
+          </div>
 
 
-      <article class="card skill-card">
-
-        <h3>
-          Operations &amp; Leadership
-        </h3>
-
-        <div class="tags">
-
-          <span class="tag violet">
-            Team Leadership
-          </span>
-
-          <span class="tag violet">
-            Performance Monitoring
-          </span>
-
-          <span class="tag violet">
-            KPI Tracking
-          </span>
-
-          <span class="tag violet">
-            Client Coordination
-          </span>
-
-          <span class="tag violet">
-            Escalation Management
-          </span>
-
-          <span class="tag violet">
-            Process Improvement
-          </span>
-
-          <span class="tag violet">
-            Training &amp; Development
-          </span>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
+          <div class="experience-location">
+            Khammam, Telangana
+          </div>
 
 
-<!-- =========================
-     TOOLS
-========================= -->
+          <ul class="experience-list">
 
-<section class="section">
+            <li>
+              Worked on computer-vision data annotation and
+              quality assurance workflows.
+            </li>
 
-  <div class="container">
+            <li>
+              Performed annotation review and quality checks
+              according to project guidelines.
+            </li>
 
-    <div class="section-head">
+            <li>
+              Worked with image, video and LiDAR-related
+              annotation workflows.
+            </li>
 
-      <div class="eyebrow">
-        TOOLS &amp; TECHNICAL
-      </div>
+            <li>
+              Identified annotation defects and supported
+              accuracy and quality improvement.
+            </li>
 
-      <h2>
-        Tools I work with.
-      </h2>
+            <li>
+              Supported team workflows, process improvement
+              and consistent delivery standards.
+            </li>
 
-      <p class="lead">
-
-        Kept intentionally focused on the three tools you asked to highlight.
-        Other technical capabilities are shown separately below.
-
-      </p>
-
-    </div>
-
-
-    <div class="tool-grid">
-
-
-      <article class="tool">
-
-        <span class="num">
-          01 / TOOL
-        </span>
-
-        <strong>
-          Deepen AI
-        </strong>
-
-        <small>
-          Annotation platform
-        </small>
-
-      </article>
-
-
-      <article class="tool">
-
-        <span class="num">
-          02 / TOOL
-        </span>
-
-        <strong>
-          Coda
-        </strong>
-
-        <small>
-          Annotation / workflow tool
-        </small>
-
-      </article>
-
-
-      <article class="tool">
-
-        <span class="num">
-          03 / TOOL
-        </span>
-
-        <strong>
-          Annotask
-        </strong>
-
-        <small>
-          Annotation tool
-        </small>
-
-      </article>
-
-
-    </div>
-
-
-    <div
-      class="grid-2"
-      style="margin-top:16px"
-    >
-
-      <article class="card">
-
-        <h3>
-          Productivity
-        </h3>
-
-        <div class="tags">
-
-          <span class="tag">
-            Microsoft Excel
-          </span>
-
-          <span class="tag">
-            Google Sheets
-          </span>
+          </ul>
 
         </div>
 
-      </article>
+      </div>
+
+    </section>
 
 
-      <article class="card">
+    <!-- =========================
+         SKILLS
+    ========================== -->
 
-        <h3>
-          Technical
-        </h3>
+    <section id="skills">
 
-        <div class="tags">
+      <div class="container">
 
-          <span class="tag">
-            Computer Hardware Troubleshooting
-          </span>
+        <div class="section-heading">
 
-          <span class="tag">
-            Basic SQL Knowledge
-          </span>
+          <div class="section-kicker">
+            Skills &amp; Tools
+          </div>
+
+          <h2 class="section-title">
+            What I <span>work with.</span>
+          </h2>
+
+          <p class="section-description">
+            Core capabilities and professional tools used across
+            annotation, quality assurance and data workflows.
+          </p>
 
         </div>
 
-      </article>
 
-    </div>
+        <!-- CORE SKILLS -->
 
-  </div>
+        <div class="skill-category">
 
-</section>
+          <div class="skill-category-title">
+            Core Skills
+          </div>
+
+          <div class="skill-list">
+
+            <span class="skill-pill">Image Annotation</span>
+            <span class="skill-pill">Video Annotation</span>
+            <span class="skill-pill">LiDAR</span>
+            <span class="skill-pill">2D Bounding Boxes</span>
+            <span class="skill-pill">3D Bounding Boxes</span>
+            <span class="skill-pill">Data Labeling</span>
+            <span class="skill-pill">QA / QC</span>
+            <span class="skill-pill">Defect Detection</span>
+            <span class="skill-pill">Error Analysis</span>
+            <span class="skill-pill">Accuracy Auditing</span>
+
+          </div>
+
+        </div>
 
 
-<!-- =========================
-     PROJECT WORK
-========================= -->
+        <!-- PROFESSIONAL SKILLS -->
 
-<section
-  class="section"
-  id="projects"
->
+        <div class="skill-category">
 
-  <div class="container">
+          <div class="skill-category-title">
+            Professional Skills
+          </div>
 
-    <div class="section-head">
+          <div class="skill-list">
 
-      <div class="eyebrow">
-        PROJECT WORK
+            <span class="skill-pill">KPI Tracking</span>
+            <span class="skill-pill">Team Leadership</span>
+            <span class="skill-pill">Client Coordination</span>
+            <span class="skill-pill">Process Improvement</span>
+            <span class="skill-pill">Training</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ONLY ACTUAL TOOLS -->
+
+        <div class="skill-category">
+
+          <div class="skill-category-title">
+            Tools
+          </div>
+
+          <div class="skill-list">
+
+            <span class="skill-pill tool-pill">
+              Deepen AI
+            </span>
+
+            <span class="skill-pill tool-pill">
+              Coda
+            </span>
+
+            <span class="skill-pill tool-pill">
+              Annotask
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <h2>
-        Work that translates into reliable training data.
-      </h2>
-
-      <p class="lead">
-
-        Portfolio highlights are presented as capability areas
-        rather than invented client projects.
-
-      </p>
-
-    </div>
+    </section>
 
 
-    <div class="project-grid">
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Work
+          </div>
+
+          <h2 class="section-title">
+            Annotation &amp; <span>QA focus.</span>
+          </h2>
+
+          <p class="section-description">
+            Areas of work and professional focus across
+            computer-vision annotation and quality assurance.
+          </p>
+
+        </div>
 
 
-      <article class="card project">
+        <div class="projects-grid">
 
-        <span class="project-num">
-          01 • COMPUTER VISION
-        </span>
+          <div class="card project-card">
 
-        <h3>
-          Autonomous Vehicle Annotation
-        </h3>
+            <div>
+              <div class="project-number">01 / ANNOTATION</div>
 
-        <p>
-          Road/lane features, pedestrians, vehicles, bicycles,
-          image and video sequences, 2D/3D bounding boxes.
-        </p>
+              <h3>
+                Computer Vision Annotation
+              </h3>
 
-        <span class="project-label">
-          Annotation • Validation • QA
-        </span>
+              <p>
+                Image and video annotation workflows including
+                object identification, bounding boxes and
+                structured data labeling.
+              </p>
+            </div>
 
-      </article>
-
-
-      <article class="card project">
-
-        <span class="project-num">
-          02 • LiDAR
-        </span>
-
-        <h3>
-          Point Cloud Labeling
-        </h3>
-
-        <p>
-          LiDAR point-cloud annotation and quality validation
-          within autonomous-vehicle dataset workflows.
-        </p>
-
-        <span class="project-label">
-          LiDAR • Guidelines • Review
-        </span>
-
-      </article>
+          </div>
 
 
-      <article class="card project">
+          <div class="card project-card">
 
-        <span class="project-num">
-          03 • QUALITY
-        </span>
+            <div>
+              <div class="project-number">02 / QUALITY</div>
 
-        <h3>
-          Defect &amp; Error Analysis
-        </h3>
+              <h3>
+                Annotation QA &amp; Auditing
+              </h3>
 
-        <p>
-          Systematic defect identification, root-cause investigation,
-          corrective action and rework validation.
-        </p>
+              <p>
+                Quality review, defect identification, guideline
+                checking and accuracy auditing across annotation
+                datasets.
+              </p>
+            </div>
 
-        <span class="project-label">
-          Defect Detection • RCA • QA
-        </span>
-
-      </article>
+          </div>
 
 
-      <article class="card project">
+          <div class="card project-card">
 
-        <span class="project-num">
-          04 • OPERATIONS
-        </span>
+            <div>
+              <div class="project-number">03 / LIDAR</div>
 
-        <h3>
-          Quality Operations at Scale
-        </h3>
+              <h3>
+                LiDAR Annotation Workflows
+              </h3>
 
-        <p>
-          KPI tracking, resource planning, training,
-          team coordination and quality monitoring across multiple shifts.
-        </p>
+              <p>
+                Annotation and quality-focused workflows involving
+                LiDAR data and computer-vision dataset requirements.
+              </p>
+            </div>
 
-        <span class="project-label">
-          KPI • Leadership • Process Improvement
-        </span>
-
-      </article>
+          </div>
 
 
-    </div>
+          <div class="card project-card">
 
-  </div>
+            <div>
+              <div class="project-number">04 / PROCESS</div>
 
-</section>
+              <h3>
+                Process &amp; Quality Improvement
+              </h3>
 
+              <p>
+                Supporting consistent annotation standards,
+                identifying recurring issues and improving
+                workflow quality.
+              </p>
+            </div>
 
-<!-- =========================
-     EDUCATION
-========================= -->
+          </div>
 
-<section class="section">
+        </div>
 
-  <div class="container">
-
-    <div class="section-head">
-
-      <div class="eyebrow">
-        EDUCATION &amp; CERTIFICATIONS
       </div>
 
-      <h2>
-        Foundation &amp; continuous readiness.
-      </h2>
-
-    </div>
+    </section>
 
 
-    <div class="edu-grid">
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Education &amp; Certifications
+          </div>
+
+          <h2 class="section-title">
+            Learning &amp; <span>certifications.</span>
+          </h2>
+
+        </div>
 
 
-      <article class="card edu-card">
+        <div class="education-grid">
 
-        <strong>
-          National Trade Certificate (NTC) – Electrician
-        </strong>
+          <div class="card education-card">
 
-        <span>
-          2-Year ITI Program • 2021 • Grade: 81%
-        </span>
+            <small>Technical Education</small>
 
-      </article>
+            <h3>
+              NTC Electrician
+            </h3>
 
+            <p>
+              2-Year ITI
+            </p>
 
-      <article class="card edu-card">
-
-        <strong>
-          Secondary School Certificate (SSC)
-        </strong>
-
-        <span>
-          Telangana State Board • 2018 • CGPA: 7.7
-        </span>
-
-      </article>
+          </div>
 
 
-      <article class="card edu-card">
+          <div class="card education-card">
 
-        <strong>
-          Fire Extinguisher Safety Training
-        </strong>
+            <small>School Education</small>
 
-        <span>
-          Current &amp; Valid Certificate
-        </span>
+            <h3>
+              SSC
+            </h3>
 
-      </article>
+            <p>
+              Telangana State Board
+            </p>
 
-
-    </div>
-
-  </div>
-
-</section>
+          </div>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+          <div class="card education-card">
 
-<section
-  class="section"
-  id="contact"
->
+            <small>Safety Training</small>
 
-  <div class="container">
+            <h3>
+              Fire Extinguisher Safety Training
+            </h3>
 
-    <div class="contact">
+            <p>
+              Safety training certificate
+            </p>
 
-      <div class="contact-grid">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
-        <div>
+    <!-- =========================
+         CONTACT
+    ========================== -->
 
-          <div class="eyebrow">
-            LET'S CONNECT
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="card contact-box">
+
+          <div class="section-kicker">
+            Contact
           </div>
 
           <h2>
-            Have a project, QA role or annotation opportunity?
+            Let's work<br>
+            <span>together.</span>
           </h2>
 
-          <p class="lead">
-
-            Open to immediate employment and remote,
-            hybrid and on-site opportunities.
-            Willing to relocate for the right opportunity.
-
+          <p>
+            For opportunities, professional discussions or
+            collaboration related to data annotation and
+            quality assurance, feel free to get in touch.
           </p>
 
+          <div class="email-display">
+            workwith.fayazqa@gmail.com
+          </div>
 
           <a
-            class="btn primary mail-btn"
-            href="mailto:workwith.fayazqa@gmail.com?subject=Portfolio%20Enquiry%20for%20Fayaz&body=Hello%20Fayaz%2C%0A%0AI%20would%20like%20to%20connect%20with%20you%20regarding%20an%20opportunity.%0A%0ARegards%2C"
+            href="mailto:workwith.fayazqa@gmail.com"
+            class="btn btn-primary"
           >
-            Send Email ↗
+            Send Me an Email ↗
           </a>
 
         </div>
 
+      </div>
 
-        <div class="contact-list">
+    </section>
 
-
-          <div class="contact-item">
-
-            <span>
-              Email
-            </span>
-
-            <a href="mailto:workwith.fayazqa@gmail.com">
-              workwith.fayazqa@gmail.com
-            </a>
-
-          </div>
+  </main>
 
 
-          <div class="contact-item">
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-            <span>
-              Phone
-            </span>
+  <footer>
 
-            <a href="tel:+916305125681">
-              +91 6305125681
-            </a>
+    <div class="container">
 
-          </div>
+      <div class="footer-inner">
 
+        <div class="footer-copy">
+          © 2026 iamshaikfayaz. All rights reserved.
+        </div>
 
-          <div class="contact-item">
+        <div class="footer-links">
 
-            <span>
-              Location
-            </span>
+          <a
+            href="https://github.com/iamshaikfayaz01"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
 
-            <a href="#contact">
-              Khammam, Telangana
-            </a>
+          <a
+            href="https://www.linkedin.com/in/fayaz-shaik-711b92428"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
 
-          </div>
-
-
-          <div class="contact-item">
-
-            <span>
-              LinkedIn
-            </span>
-
-            <a
-              href="https://www.linkedin.com/in/fayaz-shaik-711b92428"
-              target="_blank"
-              rel="noopener"
-            >
-              linkedin.com/in/fayaz-shaik-711b92428 ↗
-            </a>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <span>
-              GitHub
-            </span>
-
-            <a
-              href="https://github.com/iamshaikfayaz01"
-              target="_blank"
-              rel="noopener"
-            >
-              github.com/iamshaikfayaz01 ↗
-            </a>
-
-          </div>
-
+          <a
+            href="mailto:workwith.fayazqa@gmail.com"
+          >
+            Email
+          </a>
 
         </div>
 
@@ -2243,122 +1443,7 @@ footer{
 
     </div>
 
-  </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <div class="container footer-inner">
-
-    <div>
-      © <span id="year"></span> iamshaikfayaz
-    </div>
-
-    <div>
-      Data Annotation • Quality Assurance • Computer Vision
-    </div>
-
-  </div>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-(function(){
-
-  const intro =
-    document.getElementById("intro");
-
-  const video =
-    document.getElementById("introVideo");
-
-  const skip =
-    document.getElementById("skipIntro");
-
-
-  function finishIntro(){
-
-    intro.classList.add("hide");
-
-    document.body.classList.remove("no-scroll");
-
-    setTimeout(function(){
-
-      intro.style.display = "none";
-
-    },800);
-
-  }
-
-
-  video.addEventListener(
-    "ended",
-    finishIntro
-  );
-
-
-  skip.addEventListener(
-    "click",
-    function(){
-
-      video.pause();
-
-      finishIntro();
-
-    }
-  );
-
-
-  video.addEventListener(
-    "error",
-    function(){
-
-      setTimeout(
-        finishIntro,
-        400
-      );
-
-    }
-  );
-
-
-  const playAttempt =
-    video.play();
-
-
-  if(
-    playAttempt &&
-    typeof playAttempt.catch === "function"
-  ){
-
-    playAttempt.catch(
-      function(){}
-    );
-
-  }
-
-
-  document.getElementById("year")
-    .textContent =
-    new Date().getFullYear();
-
-})();
-
-</script>
+  </footer>
 
 </body>
 </html>
